@@ -1,6 +1,7 @@
 public class LinkedListSing {
 
     Node head;
+    int size = 0;
 
     static class Node {
         int data;
@@ -9,6 +10,19 @@ public class LinkedListSing {
         Node(int d) {
             data = d;
         }
+    }
+
+    public boolean addFirst(int item) {
+        Node newNode = new Node(item);
+        if (head == null) {
+            head = newNode;
+        } else {
+            // Node l = head;
+            newNode.next = head;
+        }
+        head = newNode;
+        size++;
+        return true;
     }
 
     public boolean addLast(int i) {
@@ -23,6 +37,47 @@ public class LinkedListSing {
 
             last.next = newNode;
         }
+        size++;
+        return true;
+    }
+
+    public boolean delete() {
+        this.head = null;
+        size = 0;
+        return true;
+    }
+
+    public boolean addAt(int idx, int item) throws Exception {
+        Node newNode = new Node(item);
+        Node prevNoce = head;
+        Node updatedNode;
+        int pos = 0;
+        if (idx > size - 1) {
+            throw new Exception("index is greater than size of List");
+        } else {
+
+            for (int i = 0; i <= size; i++) {
+
+            }
+
+        }
+        return true;
+    }
+
+    public boolean deleteAt(int index) {
+        // Node newNode = new Node(2);
+        int pos = 0;
+        Node currNode = head;
+        Node prev = currNode;
+        while (currNode.next != null) {
+            if (pos == index) {
+                prev.next = currNode.next.next;
+            } else {
+                prev.next = currNode;
+                currNode = currNode.next;
+            }
+        }
+        size--;
         return true;
     }
 
@@ -61,14 +116,36 @@ public class LinkedListSing {
         return list;
     }
 
-    public static void printList(LinkedListSing list) {
-        Node currNode = list.head;
+    public int get(int idx) throws Exception {
+        if (idx > size - 1) {
+            throw new Exception("index is greater than size of List");
+        }
+        int position = 0;
+        Node exiNode = head;
 
-        while (currNode != null) {
-            System.out.print(currNode.data + " ");
+        while (position < idx) {
+            exiNode = exiNode.next;
+            position++;
+        }
+
+        return exiNode.data;
+    }
+
+    public String toString() {
+        Node currNode = head;
+        if (head == null) {
+            return "[]";
+        }
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+        while (currNode.next != null) {
+            ;
+            s.append("'" + currNode.data + "', ");
             currNode = currNode.next;
         }
-        System.out.println();
+        s.append("'" + currNode.data + "']");
+
+        return s.toString();
     }
 
 }

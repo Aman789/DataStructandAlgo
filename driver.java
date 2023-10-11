@@ -13,8 +13,20 @@ public class driver {
 		ll.addLast(1);
 		System.out.println("First int is " + ll.getFirst());
 		System.out.println("last int is " + ll.getLast());
-		
-		ll.printList(ll);
+		int i =2;
+		System.out.println("int at "+ i+ " is: " + ll.get(i));
+		System.out.println(ll.toString());
+		ll.addFirst(5);
+		System.out.println(ll.toString());
+		ll.addFirst(6);
+		System.out.println(ll.toString());
+		System.out.println(ll.size);
+		ll.deleteAt(1);
+		System.out.println(ll.toString());
+		ll.deleteAt(2);
+		System.out.println(ll.toString());
+		ll.delete();
+		System.out.println(ll.toString());
 
 	}
 }
