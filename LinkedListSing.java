@@ -48,10 +48,7 @@ public class LinkedListSing {
     }
 
     public boolean addAt(int idx, int item) throws Exception {
-        Node newNode = new Node(item);
-        Node prevNoce = head;
-        Node updatedNode;
-        int pos = 0;
+      
         if (idx > size - 1) {
             throw new Exception("index is greater than size of List");
         } else {
@@ -68,15 +65,19 @@ public class LinkedListSing {
         // Node newNode = new Node(2);
         int pos = 0;
         Node currNode = head;
-        Node prev = currNode;
+        Node prev= currNode;
         while (currNode.next != null) {
             if (pos == index) {
-                prev.next = currNode.next.next;
+                prev.next = currNode.next;
+                break;
             } else {
-                prev.next = currNode;
+                prev = currNode;
                 currNode = currNode.next;
+                 pos++;
             }
+           
         }
+        
         size--;
         return true;
     }
