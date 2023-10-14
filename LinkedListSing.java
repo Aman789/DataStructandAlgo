@@ -48,24 +48,49 @@ public class LinkedListSing {
     }
 
     public boolean addAt(int idx, int item) throws Exception {
-      
+        int pos = 0;
+
         if (idx > size - 1) {
             throw new Exception("index is greater than size of List");
-        } else {
-
-            for (int i = 0; i <= size; i++) {
-
-            }
-
+        } else if (idx == size - 1) {
+            addLast(item);
+            return true;
+        } else if (idx == 0) {
+            addFirst(item);
+            return true;
         }
+        Node newNode = new Node(item);
+        Node currNode = head;
+        Node prev = currNode;
+        while (currNode != null) {
+            if (pos == idx) {
+                prev.next = newNode;
+                prev = prev.next;
+                prev.next = currNode;
+                break;
+            } else {
+                prev = currNode;
+                currNode = currNode.next;
+                pos++;
+            }
+        }
+        size++;
         return true;
     }
 
-    public boolean deleteAt(int index) {
+    public boolean deleteAt(int index) throws Exception {
         // Node newNode = new Node(2);
         int pos = 0;
         Node currNode = head;
-        Node prev= currNode;
+        Node prev = currNode;
+        if (index > size - 1) {
+            throw new Exception("Index out of range!");
+        }
+        if (index == 0) {
+            head = currNode.next;
+            return true;
+        }
+
         while (currNode.next != null) {
             if (pos == index) {
                 prev.next = currNode.next;
@@ -73,11 +98,15 @@ public class LinkedListSing {
             } else {
                 prev = currNode;
                 currNode = currNode.next;
-                 pos++;
+                pos++;
             }
-           
+
         }
-        
+
+        if (pos == size - 1) {
+            prev.next = null;
+        }
+
         size--;
         return true;
     }
