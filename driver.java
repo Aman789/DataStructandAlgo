@@ -1,5 +1,9 @@
+import java.util.HashMap;
+
+
 public class driver {
-	public static void main(String[] args) throws Exception {
+
+public static void main(String[] args) throws Exception {
 		/* 
 		LinkedListSing ll = new LinkedListSing();
 		ll.addLast(0);
@@ -22,13 +26,36 @@ public class driver {
 		ll.deleteAt(0);
 		System.out.println(ll.toString());
 		*/
-		LinkedListSingTail lt = new LinkedListSingTail();
-		lt.insert(10);
-		lt.insert(9);
-		lt.insert(8);
-		System.out.println(lt.gitfirst());
-		System.out.println(lt.getlast());
+		// LinkedListSingQueue lt = new LinkedListSingQueue();
+		// lt.push(10);
+		// lt.push(9);
+		// lt.push(8);
+		// System.out.println(lt.gitfirst());
+		// System.out.println(lt.getlast());
+		// lt.pushFirst(7);
+		// System.out.println(lt.gitfirst());
+		// System.out.println(lt.toString());
+		// // First in, First out
+		// lt.push(3);
+		// // always first out when we pop
+		// System.out.println(lt.pop());
+		// System.out.println(lt.toString());
 		
+		MyHashMap hashM = new MyHashMap();
+		//hashM.getAll(); 	
+		hashM.add("go", 1);
+		hashM.add("no" ,2);
+		hashM.add("stop", 3);
+		System.out.println("The sieze is "+ hashM.size);
+		hashM.add("st", 4);
+		
+		hashM.getAll();
+		System.out.println("*******");
+		hashM.get("no");
+		System.out.println("The size is "+hashM.size);
+		System.out.println(hashM.getNode("no").key +"||"+ hashM.getNode("no").data);
+		System.out.println(hashM.getNode("st").next.key +"||"+hashM.getNode("st").next.data);
+		System.out.println(hashM.getLength());
 
 	}
 }
