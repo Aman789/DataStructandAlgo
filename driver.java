@@ -52,10 +52,10 @@ public static void main(String[] args) throws Exception {
 		hashM.getAll();
 		System.out.println("*******");
 		hashM.get("no");
+		hashM.get("st");
 		System.out.println("The size is "+hashM.size);
-		System.out.println(hashM.getNode("no").key +"||"+ hashM.getNode("no").data);
-		System.out.println(hashM.getNode("st").next.key +"||"+hashM.getNode("st").next.data);
-		System.out.println(hashM.getLength());
+		hashM.remove("no");
+		
 
 	}
 }

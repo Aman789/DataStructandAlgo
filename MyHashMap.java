@@ -36,6 +36,7 @@ public class MyHashMap {
 
     public void add(String key, int val) {
         int idx = key.hashCode() % size;
+        System.out.println("index is "+ idx);
         Node node = new Node(key, val);
         if ((float) entries / size >= cap) {
             resizeArray();
@@ -66,12 +67,22 @@ public class MyHashMap {
 
     public void remove(String key) {
         int idx = key.hashCode() % size;
-        arr[idx] = null;
+        Node node = arr[idx];
+        while (!node.key.equals(key)){
+            node = node.next;
+        }
+        if (node !=null){
+            node = null;
+        }
     }
 
     public void get(String key) {
         int idx = key.hashCode() % size;
-        System.out.println(arr[idx].data);
+        Node node = arr[idx];
+        while (!node.key.equals(key)){
+            node = node.next;
+        }
+        System.out.println(node.data);
     }
 
     public Node getNode(String key) {
