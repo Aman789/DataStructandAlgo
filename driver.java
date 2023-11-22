@@ -40,7 +40,7 @@ public static void main(String[] args) throws Exception {
 		// // always first out when we pop
 		// System.out.println(lt.pop());
 		// System.out.println(lt.toString());
-		
+		/* 
 		MyHashMap hashM = new MyHashMap();
 		//hashM.getAll(); 	
 		hashM.add("go", 1);
@@ -55,7 +55,16 @@ public static void main(String[] args) throws Exception {
 		hashM.get("st");
 		System.out.println("The size is "+hashM.size);
 		hashM.remove("no");
-		
+		*/
+
+
+		/*
+		 * Exercise
+		 */
+		int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+		int[] nums2 = {5,4,-1,7,8};
+		Exercise exe = new Exercise();
+		System.out.println(exe.maxSubArray(nums2));
 
 	}
 }

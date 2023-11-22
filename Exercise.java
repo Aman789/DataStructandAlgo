@@ -27,4 +27,22 @@ public class Exercise {
         }
         return temp;
     }
+
+    public int maxSubArray(int[] nums) {
+        int max = nums[0];
+        int out = nums[0];
+        int cnt =0;
+        for (int i = 0; i < nums.length; i++) {
+            if (out + nums[i] > out && nums[i+1]> out){
+                out+=nums[i];
+            }
+            else{
+                out=nums[i];
+            }
+
+        }
+
+        return out;
+    }
+
 }
