@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 
 
 public class driver {
@@ -61,10 +62,49 @@ public static void main(String[] args) throws Exception {
 		/*
 		 * Exercise
 		 */
+		/*subarray 
 		int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 		int[] nums2 = {5,4,-1,7,8};
 		Exercise exe = new Exercise();
 		System.out.println(exe.maxSubArray(nums2));
+		*/
+		/* 
+		ListNode l1 = new ListNode(0);
+		ListNode l2 = new ListNode(1);
+		ListNode curr = new ListNode();
+		ListNode fin = new ListNode();
+		ListNode tail = new ListNode();
+		l1.next = l2;
+		int i =1;
+		fin = curr;
+		while (i<10){
+			ListNode rand = new ListNode(i);
+			//tail= rand;
+			curr.next = rand;
+			curr=curr.next;
+			i++;
+		}
+		fin = fin.next;
+		while(fin!=null){
+			System.out.println(fin.val);
+			fin=fin.next;
+		}
+		*/
+		/* Remove duplicate
+		int[] nums2 = {1,1,1,2,2,3};
+		int[] nums1 = {0,0,1,1,1,1,2,3,3};
+		Exercise exe = new Exercise();	
+		System.out.println(exe.removeDuplicates(nums2));
+		*/
 
+		BinaryTree bin = new BinaryTree();
+
+		bin.insertByValue(10);
+		bin.insertByValue(5);
+		bin.insertByValue(15);
+		bin.insertByValue(11);
+		System.out.println(bin.findElement(11));
+		System.out.println(bin.findMinValue());
+		System.out.println(bin.findMaxValue());
 	}
 }
