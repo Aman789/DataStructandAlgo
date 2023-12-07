@@ -103,8 +103,9 @@ public static void main(String[] args) throws Exception {
 		bin.insertByValue(5);
 		bin.insertByValue(15);
 		bin.insertByValue(11);
-		System.out.println(bin.findElement(11));
-		System.out.println(bin.findMinValue());
-		System.out.println(bin.findMaxValue());
+		// System.out.println(bin.findElement(11));
+		// System.out.println(bin.findMinValue());
+		// System.out.println(bin.findMaxValue());
+		bin.bfsearch();
 	}
 }

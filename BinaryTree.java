@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
     Node root;
 
@@ -70,7 +73,7 @@ public class BinaryTree {
     public int findMinValue() {
         Node curr = root;
 
-        while (curr.left != null){
+        while (curr.left != null) {
             curr = curr.left;
         }
 
@@ -78,18 +81,37 @@ public class BinaryTree {
 
     }
 
-    public int findMaxValue() {               
-        return findMax(root).val; 
+    public int findMaxValue() {
+        Node curr = root;
+        while (curr.right != null) {
+            curr = curr.right;
+        }
+        return curr.val;
     }
 
-    public Node findMax(Node node){
-        if (node.right !=null){
+    public Node findMax(Node node) {
+        if (node.right == null) {
+            return node;
+        } else {
             findMax(node.right);
         }
-        else{
-            return node;
-        }
         return node;
+    }
+
+    public void bfsearch(){
+        Queue<Node> bfs = new LinkedList<>();
+        bfs.add(root);
+        while(!bfs.isEmpty()){
+            Node rm = bfs.remove();
+            System.out.println(rm.val);
+            if (rm.left != null){
+                bfs.add(rm.left);
+            }
+            if (rm.right != null){
+                bfs.add(rm.right);
+            }
+            
+        }
     }
 
 }
