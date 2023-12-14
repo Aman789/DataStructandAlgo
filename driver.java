@@ -99,13 +99,27 @@ public static void main(String[] args) throws Exception {
 
 		BinaryTree bin = new BinaryTree();
 
-		bin.insertByValue(10);
+		bin.insertByValue(6);
+		bin.insertByValue(4);
+		bin.insertByValue(8);
+		bin.insertByValue(3);
 		bin.insertByValue(5);
-		bin.insertByValue(15);
+		bin.insertByValue(7);
+		bin.insertByValue(9);
+		bin.insertByValue(2);
+		bin.insertByValue(12);
+		bin.insertByValue(14);
 		bin.insertByValue(11);
+		bin.insertByValue(15);
 		// System.out.println(bin.findElement(11));
 		// System.out.println(bin.findMinValue());
 		// System.out.println(bin.findMaxValue());
-		bin.bfsearch();
+		//bin.bfsearch();
+		bin.inOrderSearch();
+		System.out.println(bin.findHeight());
+		bin.deletby(3);
+		bin.deletby(12);
+		System.out.println("-------------");
+		bin.inOrderSearch();
 	}
 }
